@@ -1,0 +1,19 @@
+{
+  "name": "kodemia-backend-challenge-back",
+  "version": "0.0.1",
+  "description": "Final Project f Kodemia BackEnd Module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/RafaMtz2021/kodemia-backend-challenge-back.git"
+  },
+  "author": "Luis Balan, Rafael Martinez, Luis Mora",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RafaMtz2021/kodemia-backend-challenge-back/issues"
+  },
+  "homepage": "https://github.com/RafaMtz2021/kodemia-backend-challenge-back#readme"
+}
