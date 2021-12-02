@@ -10,13 +10,13 @@ const postSchema = new mongoose.Schema({
     body: {
         type: String,
         minlength:2,
-        maxlength:1000,
+        maxlength:10000,
         required: true,
     },
     url: {
         type: String,
         min:2,
-        max:120,
+        max:200,
         required:true,
     },
     tags: {
@@ -32,7 +32,7 @@ const postSchema = new mongoose.Schema({
     likes: {
         type:Number,
         required:true,
-        maxlength:100,
+        max:100000,
     },
 });
 
