@@ -22,7 +22,7 @@ const postSchema = new mongoose.Schema({
     tags: {
         type:Array,
         required:true,
-        maxlength:50,
+        maxlength:4,
     },
     date: {
         type:String,

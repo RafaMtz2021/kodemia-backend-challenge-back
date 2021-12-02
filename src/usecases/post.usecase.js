@@ -6,6 +6,12 @@ async function getAllPosts() {
     return allPosts
   }
 
+async function postPost(post) {
+  const postPost = await Post.create(post)
+
+}
+
 module.exports = {
     getAllPosts,
+    postPost
 }
