@@ -13,5 +13,5 @@ async function createPost(post) {
 
 module.exports = {
     getAllPosts,
-    createPost
+    createPost,
 }
