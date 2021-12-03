@@ -44,7 +44,31 @@ async function createPost(request,response) {
   }
 }
 
+async function deletePost(request,response) {
+    console.log(request.query);
+  try {
+    const idPost = request.params.id
+      const deletePost = await post.deletePost(idPost)
+      response.json({
+          success: true,
+          message: 'Post deleted',
+          data: {
+              post: deletePost,
+          }
+      })
+  } catch (error) {
+      console.error(error);
+      response.statusCode = 500
+      response.json({
+          success: false,
+          message: 'Could not delete post',
+          error,
+      })
+  }
+}
+
   module.exports = {
       getPost,
       createPost,
+      deletePost,
   }
