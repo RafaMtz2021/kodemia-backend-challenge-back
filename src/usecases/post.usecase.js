@@ -21,7 +21,7 @@ async function updatePost(){
 }
 module.exports = {
     getAllPosts,
-    postPost,
+    postPost, 
     updatePost,
     createPost,
     deletePost,
