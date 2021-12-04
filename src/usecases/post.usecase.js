@@ -11,7 +11,12 @@ async function postPost(post) {
 
 }
 
+//Cual es el punto?
+async function updatePost(){
+  
+}
 module.exports = {
     getAllPosts,
-    postPost
+    postPost,
+    updatePost
 }

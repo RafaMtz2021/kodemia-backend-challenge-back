@@ -8,4 +8,8 @@ router.get('/',controller.getPost)
 
 router.post('/',controller.postPost)
 
+router.put('/',controller.updatePost)
+
 module.exports = router
+
+
