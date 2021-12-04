@@ -22,11 +22,11 @@ async function getPost(request,response) {
     }
   }
 
-async function postPost(request,response) {
+async function createPost(request,response) {
     console.log(request.query);
   try {
       const newPost = request.query
-      const postPost = await post.postPost(newPost)
+      const createPost = await post.createPost(newPost)
       response.json({
           success: true,
           message: 'Post created',
@@ -79,5 +79,7 @@ async function updatePost(req,res){
   module.exports = {
       getPost,
       postPost,
-      updatePost
+      updatePost,
+      createPost,
+      deletePost,
   }

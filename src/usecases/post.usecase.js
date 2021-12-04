@@ -2,12 +2,16 @@
 const Post = require ('../models/post.model')
 async function getAllPosts() {
     const allPosts = await Post.find()
-
     return allPosts
   }
 
-async function postPost(post) {
-  const postPost = await Post.create(post)
+async function createPost(post) {
+  const createPost = await Post.create(post)
+}
+
+async function deletePost(id) {
+
+  const deletePost = await Post.findByIdAndDelete(id)
 
 }
 
@@ -18,5 +22,7 @@ async function updatePost(){
 module.exports = {
     getAllPosts,
     postPost,
-    updatePost
+    updatePost,
+    createPost,
+    deletePost,
 }
