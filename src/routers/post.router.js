@@ -10,4 +10,8 @@ router.post('/',controller.createPost)
 
 router.delete('/:id',controller.deletePost)
 
+router.put('/',controller.updatePost)
+
 module.exports = router
+
+

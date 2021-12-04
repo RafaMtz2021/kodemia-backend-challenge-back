@@ -15,8 +15,14 @@ async function deletePost(id) {
 
 }
 
+//Cual es el punto?
+async function updatePost(){
+  
+}
 module.exports = {
     getAllPosts,
+    postPost,
+    updatePost,
     createPost,
     deletePost,
 }
