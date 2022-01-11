@@ -15,8 +15,16 @@ async function deletePost(id) {
 
 }
 
+async function getPostById(id) {
+
+  const getPostById = await Post.findById(id)
+  return getPostById
+
+}
+
 module.exports = {
     getAllPosts,
     createPost,
     deletePost,
+    getPostById,
 }
