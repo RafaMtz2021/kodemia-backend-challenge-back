@@ -10,8 +10,7 @@ router.post('/',controller.createPost)
 
 router.delete('/:id',controller.deletePost)
 
-router.put('/',controller.updatePost)
+router.get('/:id',controller.getPostById)
 
 module.exports = router
-
 

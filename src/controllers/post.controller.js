@@ -76,10 +76,35 @@ async function updatePost(req,res){
     });
 }
 
+async function getPostById(request,response) {
+    console.log(request.query);
+  try {
+    const idPost = request.params.id
+   
+      const getPostById = await post.getPostById(idPost)
+      response.json({
+          success: true,
+          message: idPost,
+          data: {
+              post: getPostById,
+          }
+      })
+  } catch (error) {
+      console.error(error);
+      response.statusCode = 500
+      response.json({
+          success: false,
+          message: 'Could not get post: ',
+          error,
+      })
+  }
+}
+
   module.exports = {
       getPost,
       postPost,
       updatePost,
       createPost,
       deletePost,
+      getPostById,
   }

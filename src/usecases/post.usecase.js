@@ -15,14 +15,18 @@ async function deletePost(id) {
 
 }
 
-//Cual es el punto?
-async function updatePost(){
-  
+async function getPostById(id) {
+
+  const getPostById = await Post.findById(id)
+  return getPostById
+
 }
+
 module.exports = {
     getAllPosts,
     postPost, 
     updatePost,
     createPost,
     deletePost,
+    getPostById,
 }
