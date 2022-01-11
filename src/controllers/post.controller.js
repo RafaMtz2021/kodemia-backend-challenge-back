@@ -1,4 +1,5 @@
 const post = require('../usecases/post.usecase')
+const Post = require ('../models/post.model')
 
 async function getPost(request,response) {
     try {
@@ -44,16 +45,48 @@ async function createPost(request,response) {
   }
 }
 
-async function deletePost(request,response) {
+async function updatePost(req,res){
+    //entidades,casos de usos, controladores, router
+    console.log('Updating Post: ');
+    const modelId = req.body._id;
+    const newName = req.body.title;
+    const newBody = req.body.body;
+    const newTags = req.body.tags
+
+    console.log(modelId + ' : Modelo')
+    console.log('name ' + newName )
+    
+
+    Post.findById(modelId).then((model) => {
+        console.log('Returning Model: ' + model)
+        return Object.assign(model, {
+            title: newName,
+            body: newBody,
+            tags: newTags
+        });
+    }).then((model) => {
+        return model.save();
+    }).then((updatedModel) => {
+        res.json({
+            msg: 'post updated',
+            updatedModel
+        });
+    }).catch((err) => {
+        res.send(err);
+    });
+}
+
+async function getPostById(request,response) {
     console.log(request.query);
   try {
     const idPost = request.params.id
-      const deletePost = await post.deletePost(idPost)
+   
+      const getPostById = await post.getPostById(idPost)
       response.json({
           success: true,
-          message: 'Post deleted',
+          message: idPost,
           data: {
-              post: deletePost,
+              post: getPostById,
           }
       })
   } catch (error) {
@@ -61,7 +94,7 @@ async function deletePost(request,response) {
       response.statusCode = 500
       response.json({
           success: false,
-          message: 'Could not delete post',
+          message: 'Could not get post: ',
           error,
       })
   }
@@ -69,6 +102,9 @@ async function deletePost(request,response) {
 
   module.exports = {
       getPost,
+      postPost,
+      updatePost,
       createPost,
       deletePost,
+      getPostById,
   }
