@@ -8,7 +8,7 @@ router.get('/',controller.getPost)
 
 router.post('/',controller.createPost)
 
-router.delete('/:id',controller.deletePost)
+//router.delete('/:id',controller.deletePost)
 
 router.get('/:id',controller.getPostById)
 
