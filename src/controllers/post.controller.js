@@ -102,9 +102,7 @@ async function getPostById(request,response) {
 
   module.exports = {
       getPost,
-      postPost,
       updatePost,
       createPost,
-      deletePost,
       getPostById,
   }
