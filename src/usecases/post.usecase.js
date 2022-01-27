@@ -24,8 +24,6 @@ async function getPostById(id) {
 
 module.exports = {
     getAllPosts,
-    postPost, 
-    updatePost,
     createPost,
     deletePost,
     getPostById,
